@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion | BDD Ciel</title>
+    <meta name="description" content="Connectez-vous ou creez votre compte BDD Ciel pour acceder a la plateforme.">
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="../js/main.js" defer></script>
+</head>
+<body>
+    <div id="header"></div>
+
+    <main class="auth-page">
+        <section class="auth-shell">
+            <section class="auth-card" data-auth-mode="login" aria-label="Zone de connexion">
+                <header class="auth-card-head">
+                    <span class="auth-badge">BDD Ciel</span>
+                    <h1>Connexion</h1>
+                    <p>Accedez a votre espace ou creez un compte en quelques clics.</p>
+                </header>
+
+                <div class="auth-tabs" role="tablist" aria-label="Choix du formulaire">
+                    <button class="auth-tab is-active" type="button" role="tab" aria-selected="true" data-auth-target="login">Connexion</button>
+                    <button class="auth-tab" type="button" role="tab" aria-selected="false" data-auth-target="register">Creer un compte</button>
+                </div>
+
+                <div class="auth-socials">
+                    <a class="auth-social-btn" href="#" aria-disabled="true">
+                        <span class="auth-social-mark google">G</span>
+                        Continuer avec Google
+                    </a>
+                    <a class="auth-social-btn" href="#" aria-disabled="true">
+                        <span class="auth-social-mark microsoft">M</span>
+                        Continuer avec Microsoft
+                    </a>
+                </div>
+
+                <div class="auth-divider">
+                    <span>ou utilisez votre email</span>
+                </div>
+
+                <div class="auth-panels">
+                    <form class="auth-panel is-active" id="login-panel" data-auth-panel="login">
+                        <header class="auth-panel-head">
+                            <h2>Heureux de vous revoir</h2>
+                            <p>Connectez-vous pour acceder a votre espace personnel.</p>
+                        </header>
+
+                        <label class="auth-field">
+                            <span>Adresse email</span>
+                            <input type="email" name="email" placeholder="vous@exemple.com" autocomplete="email" required>
+                        </label>
+
+                        <label class="auth-field">
+                            <span>Mot de passe</span>
+                            <input type="password" name="password" placeholder="Votre mot de passe" autocomplete="current-password" required>
+                        </label>
+
+                        <div class="auth-inline">
+                            <label class="auth-checkbox">
+                                <input type="checkbox" name="remember">
+                                <span>Se souvenir de moi</span>
+                            </label>
+                            <a href="#" class="auth-link">Mot de passe oublie ?</a>
+                        </div>
+
+                        <button class="auth-submit" type="submit">Se connecter</button>
+
+                        <p class="auth-switch">
+                            Pas encore de compte ?
+                            <button type="button" class="auth-text-btn" data-auth-target="register">Creer un compte</button>
+                        </p>
+                    </form>
+
+                    <form class="auth-panel" id="register-panel" data-auth-panel="register" hidden>
+                        <header class="auth-panel-head">
+                            <h2>Creer votre compte</h2>
+                            <p>Rejoignez BDD Ciel avec un parcours d'inscription rapide.</p>
+                        </header>
+
+                        <div class="auth-grid">
+                            <label class="auth-field">
+                                <span>Prenom</span>
+                                <input type="text" name="first_name" placeholder="Votre prenom" autocomplete="given-name" required>
+                            </label>
+
+                            <label class="auth-field">
+                                <span>Nom</span>
+                                <input type="text" name="last_name" placeholder="Votre nom" autocomplete="family-name" required>
+                            </label>
+                        </div>
+
+                        <label class="auth-field">
+                            <span>Adresse email</span>
+                            <input type="email" name="register_email" placeholder="vous@exemple.com" autocomplete="email" required>
+                        </label>
+
+                        <label class="auth-field">
+                            <span>Mot de passe</span>
+                            <input type="password" name="register_password" placeholder="Choisissez un mot de passe" autocomplete="new-password" required>
+                        </label>
+
+                        <label class="auth-field">
+                            <span>Confirmer le mot de passe</span>
+                            <input type="password" name="register_password_confirm" placeholder="Retapez votre mot de passe" autocomplete="new-password" required>
+                        </label>
+
+                        <label class="auth-checkbox">
+                            <input type="checkbox" name="terms" required>
+                            <span>J'accepte les conditions d'utilisation et la politique de confidentialite.</span>
+                        </label>
+
+                        <button class="auth-submit" type="submit">Creer mon compte</button>
+
+                        <p class="auth-switch">
+                            Vous avez deja un compte ?
+                            <button type="button" class="auth-text-btn" data-auth-target="login">Se connecter</button>
+                        </p>
+                    </form>
+                </div>
+            </section>
+        </section>
+    </main>
+
+    <div id="footer"></div>
+</body>
+</html>
