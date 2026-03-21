@@ -1,5 +1,5 @@
 :root {
-    --font-sans: "Inter", "Segoe UI", sans-serif;
+    --font-sans: "Montserrat", sans-serif;
     --bg: #f4f6f8;
     --bg-soft: #ffffff;
     --surface: rgba(255, 255, 255, 0.74);
@@ -371,13 +371,14 @@ button:focus-visible {
 .btn-secondary {
     border: 1px solid var(--accent);
     background: rgba(255, 255, 255, 0.82);
-    color: var(--text);
+    color: var(--accent);
 }
 
 .btn-secondary:hover,
 .btn-secondary:focus-visible {
     background: rgba(255, 255, 255, 0.96);
     box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+    color: var(--accent);
 }
 
 .hero {
@@ -487,6 +488,18 @@ button:focus-visible {
     height: 10px;
     border-radius: 50%;
     background: rgba(15, 23, 42, 0.18);
+}
+
+.dashboard-topbar .x-circle {
+    background: #ff5c60;
+}
+
+.dashboard-topbar .--circle {
+    background: #fac800;
+}
+
+.dashboard-topbar .box-circle {
+    background: #35c759;
 }
 
 .dashboard-layout {
@@ -623,18 +636,54 @@ button:focus-visible {
     color: var(--text-soft);
 }
 
+.marquee-strip {
+    position: relative;
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    margin-bottom: 56px;
+    padding: 24px 0;
+    border-left: 0;
+    border-right: 0;
+    border-radius: 0;
+    overflow: hidden;
+}
+
+.logo-marquee {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    mask-image: linear-gradient(to right, transparent 0, black 10%, black 90%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0, black 10%, black 90%, transparent 100%);
+}
+
+.logo-track {
+    display: flex;
+    width: max-content;
+    gap: 18px;
+    animation: marqueeLogos 28s linear infinite;
+}
+
 .logo-row {
-    display: grid;
-    grid-template-columns: repeat(5, minmax(0, 1fr));
+    display: flex;
+    align-items: center;
     gap: 14px;
+    flex: 0 0 auto;
+    min-width: max-content;
+    padding-inline: 18px;
 }
 
 .logo-row span {
-    padding: 18px 14px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 190px;
+    padding: 18px 22px;
     border-radius: 18px;
     background: rgba(255, 255, 255, 0.9);
     color: #667085;
     font-weight: 700;
+    white-space: nowrap;
 }
 
 .split-grid,
@@ -1093,6 +1142,16 @@ button:focus-visible {
     }
 }
 
+@keyframes marqueeLogos {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(calc(-50% - 9px));
+    }
+}
+
 @media (max-width: 860px) {
     #header > header,
     #footer > footer {
@@ -1162,6 +1221,11 @@ button:focus-visible {
         width: var(--landing-main);
     }
 
+    .marquee-strip {
+        width: 100vw;
+        margin-bottom: 42px;
+    }
+
     .auth-card {
         padding: 24px;
         border-radius: 24px;
@@ -1205,6 +1269,18 @@ button:focus-visible {
     .final-cta,
     .section-shell {
         width: min(100%, calc(100vw - 28px));
+    }
+
+    .marquee-strip {
+        width: 100vw;
+        margin-left: calc(50% - 50vw);
+        margin-right: calc(50% - 50vw);
+        margin-bottom: 32px;
+        padding: 20px 0;
+    }
+
+    .logo-row span {
+        min-width: 160px;
     }
 
     .hero-actions,
